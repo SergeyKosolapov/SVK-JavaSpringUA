@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="target1"
+          class="com.hw22.CityAuto">
+    </bean>
+    <bean id="target2"
+          class="com.hw22.LightOffRoad">
+    </bean>
+    <bean id="target3"
+          class="com.hw22.OffRoadAuto">
+    </bean>
+    <bean id="kIAK5"
+          class="com.hw22.Automob">
+        <constructor-arg ref="target1"/>
+    </bean>
+    <bean id="toyotaLandCruiser"
+          class="com.hw22.Automob3">
+        <constructor-arg ref="target3"/>
+        <constructor-arg type="java.lang.String" value="Toyota_Land_Cruiser"/>
+    </bean>
+    <bean id="hyundaiVenue"
+          class="com.hw22.Automob4">
+          <property name="movement">
+            <ref bean="target2"/>
+          </property>
+        <constructor-arg type="java.lang.String" value="Hyundai Venue"/>
+    </bean>
+    <bean id="subaruOutback"
+          class="com.hw22.Automob5" init-method="initWD">
+        <constructor-arg ref="target3"/>
+        <constructor-arg type="java.lang.String" value="Subaru Outback"/>
+    </bean>
+
+</beans>
