@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update worker</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/worker/{id}(id=${worker.getId()})}" th:object="${worker}">
+    <label for="name">Enter name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    <br/>
+    <label for="age">Enter age: </label>
+    <input type="text" th:field="*{age}" id="age"/>
+    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
+    <br/>
+    <label for="education">Enter education: </label>
+    <input type="text" th:field="*{education}" id="education"/>
+    <div style="color:red" th:if="${#fields.hasErrors('education')}" th:errors="*{education}">Education Error</div>
+    <br/>
+    <label for="position">Enter position: </label>
+    <input type="text" th:field="*{position}" id="position"/>
+    <div style="color:red" th:if="${#fields.hasErrors('position')}" th:errors="*{position}">Position Error</div>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+
+</body>
+</html>
