@@ -62,7 +62,7 @@ public class WorkerController {
     }
 
     @PatchMapping("/{id}")
-    public String update(@ModelAttribute("person") @Valid Worker worker, BindingResult bindingResult,
+    public String update(@ModelAttribute("worker") @Valid Worker worker, BindingResult bindingResult,
                          @PathVariable("id") int id) {
         if (bindingResult.hasErrors())
             return "worker/edit";
