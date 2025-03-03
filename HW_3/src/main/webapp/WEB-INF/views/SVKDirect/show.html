@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<p th:text="${row.getData1()}">VALUE</p>
+<p th:text="${row.getId()}">VALUE</p>
+
+<a th:href="@{/SVKDirect/{id}/edit(id=${row.getId()})}">Edit</a>
+
+</body>
+</html>

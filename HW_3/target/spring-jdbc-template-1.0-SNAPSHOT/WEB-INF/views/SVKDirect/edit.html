@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update row</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/SVKDirect/{id}(id=${row.getId()})}" th:object="${row}">
+    <label for="data1">Enter text data: </label>
+    <input type="text" th:field="*{data1}" id="data1"/>
+    <div style="color:red" th:if="${#fields.hasErrors('data1')}" th:errors="*{data1}">Data Error</div>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+
+</body>
+</html>

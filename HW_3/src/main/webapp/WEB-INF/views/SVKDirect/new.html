@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>VVedenie</title>
+</head>
+<body>
+
+<h1>Form</h1>
+
+<form th:method="POST" th:action="@{/SVKDirect}" th:object="${row}">
+    <label for="data1">Enter Data1: </label>
+    <input type="text" th:field="*{data1}" id="data1"/>
+    <div style="color:red" th:if="${#fields.hasErrors('data1')}" th:errors="*{data1}">Data1 Error</div>
+    <br/>
+
+    <input type="submit" value="Create Record!"/>
+</form>
+
+<a href="index">   All datas    </a>
+
+</body>
+</html>
