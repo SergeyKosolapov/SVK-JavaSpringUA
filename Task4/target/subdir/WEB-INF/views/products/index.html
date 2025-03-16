@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index products</title>
+</head>
+<body>
+
+<div th:each="products : ${products}">
+    <a th:href="@{/products/{id}(id=${products.getId()})}"
+       th:text="${products.getName() + ', ' + products.getQuality() + ' pcs., ' + products.getPrice() + ' UAH, '  + products.getYear() + ' ' + products.getProducer()}">user</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/products/qualmax">Products with Maximal quality</a>
+<a href="/products/new">Create new product</a>
+
+</body>
+</html>

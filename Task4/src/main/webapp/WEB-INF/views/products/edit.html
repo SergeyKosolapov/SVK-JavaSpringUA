@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update product</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/products/{id}(id=${products.getId()})}" th:object="${products}">
+    <label for="name">Enter name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    <br/>
+    <label for="quality">Enter quality (pcs): </label>
+    <input type="text" th:field="*{quality}" id="quality"/>
+    <div style="color:red" th:if="${#fields.hasErrors('quality')}" th:errors="*{quality}">Quality Error</div>
+    <br/>
+    <label for="price">Enter price (UAH): </label>
+    <input type="text" th:field="*{price}" id="price"/>
+    <div style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</div>
+    <br/>
+    <label for="year">Enter year: </label>
+    <input type="text" th:field="*{year}" id="year"/>
+    <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">Year Error</div>
+    <br/>
+    <label for="producer">Enter producer: </label>
+    <input type="text" th:field="*{producer}" id="producer"/>
+    <div style="color:red" th:if="${#fields.hasErrors('producer')}" th:errors="*{producer}">Producer Error</div>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+
+</body>
+</html>

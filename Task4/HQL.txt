@@ -1,0 +1,2 @@
+String hql = "FROM Author a WHERE LOWER(a.name) LIKE LOWER(:namePattern)";Query query = session.createQuery(hql);query.setParameter("namePattern", "%john%");List<Author> authors = query.list();
+(select max(pp.quality) from Products pp)
